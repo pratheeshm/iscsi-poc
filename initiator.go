@@ -37,6 +37,7 @@ func initiator() {
 		writeData = append(writeData, make([]byte, headerBytes+blockSize-len(writeData))...)
 	}
 
+	fmt.Printf("sending the message Hello, iSCSI Target! to block %d\n", blockNumber)
 	fmt.Printf("Sending write request: %v\n", writeData)
 
 	_, err = conn.Write(writeData)
